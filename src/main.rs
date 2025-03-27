@@ -11,7 +11,7 @@ fn main() {
     for stream in listener.incoming() {
         match stream {
             Ok(mut _stream) => {
-                let mut mut_stream = _stream.write_all(b"+PONG\r\n").unwrap();
+                _stream.write_all(b"+PONG\r\n").unwrap();
                 println!("accepted new connection");
             }
             Err(e) => {
